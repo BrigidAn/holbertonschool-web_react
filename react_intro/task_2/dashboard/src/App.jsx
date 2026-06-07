@@ -21,6 +21,17 @@ function App() {
 
       <div className="App-body">
         <p>Login to access the full dashboard</p>
+
+        {/* NEW FORM ELEMENTS */}
+        <div>
+          <label htmlFor="email">Email</label>
+          <input id="email" type="email" />
+
+          <label htmlFor="password">Password</label>
+          <input id="password" type="password" />
+
+          <button type="button">OK</button>
+        </div>
       </div>
 
       <div className="App-footer">
