@@ -1,1 +1,1 @@
-https://github.com/BrigidAn/holbertonschool-web_react.git
+https://brigidan.github.io/holbertonschool-web_react/
