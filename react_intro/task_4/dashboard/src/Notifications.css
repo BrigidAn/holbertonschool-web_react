@@ -22,3 +22,11 @@
 .close-btn {
   outline: none;
 }
+
+[data-priority="default"] {
+  color: blue;
+}
+
+[data-priority="urgent"] {
+  color: red;
+}

@@ -36,3 +36,11 @@ body {
   padding: 15px;
   font-style: italic;
 }
+
+[data-priority="default"] {
+  color: blue;
+}
+
+[data-priority="urgent"] {
+  color: red;
+}
