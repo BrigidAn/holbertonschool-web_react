@@ -11,11 +11,7 @@ function App() {
       </div>
 
       <div className="App-header">
-        <img
-          src={logo}
-          alt="holberton logo"
-          className="App-logo"
-        />
+        <img src={logo} alt="holberton logo" className="App-logo" />
         <h1>School dashboard</h1>
       </div>
 
@@ -29,7 +25,6 @@ function App() {
 
           <label htmlFor="password">Password</label>
           <input id="password" type="password" />
-
           <button type="button">OK</button>
         </div>
       </div>
