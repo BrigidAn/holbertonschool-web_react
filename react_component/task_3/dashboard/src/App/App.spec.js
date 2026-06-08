@@ -104,4 +104,17 @@ describe("App component", () => {
 
     alertMock.mockRestore();
   });
+  test("renders News from the School section", () => {
+    render(<App />);
+
+    expect(
+      screen.getByRole("heading", {
+        name: /news from the school/i,
+      }),
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getByText(/holberton school news goes here/i),
+    ).toBeInTheDocument();
+  });
 });

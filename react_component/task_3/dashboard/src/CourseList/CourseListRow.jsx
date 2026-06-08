@@ -1,41 +1,41 @@
 import React from "react";
 import PropTypes from "prop-types";
-import CourseListRow from "./CourseListRow";
 
-function CourseList({ courses = [] }) {
-  return (
-    <table id="CourseList">
-      <thead>
-        <CourseListRow isHeader textFirstCell="Available courses" />
-        <CourseListRow
-          isHeader
-          textFirstCell="Course name"
-          textSecondCell="Credit"
-        />
-      </thead>
-
-      <tbody>
-        {courses.length === 0 ? (
-          <CourseListRow
-            isHeader
-            textFirstCell="No course available yet"
-          />
+function CourseListRow({
+  isHeader = false,
+  textFirstCell = "",
+  textSecondCell = null,
+}) {
+  if (isHeader) {
+    return (
+      <tr>
+        {textSecondCell === null ? (
+          <th colSpan="2">{textFirstCell}</th>
         ) : (
-          courses.map((course) => (
-            <CourseListRow
-              key={course.id}
-              textFirstCell={course.name}
-              textSecondCell={course.credit}
-            />
-          ))
+          <>
+            <th>{textFirstCell}</th>
+            <th>{textSecondCell}</th>
+          </>
         )}
-      </tbody>
-    </table>
+      </tr>
+    );
+  }
+
+  return (
+    <tr>
+      <td>{textFirstCell}</td>
+      <td>{textSecondCell}</td>
+    </tr>
   );
 }
 
-CourseList.propTypes = {
-  courses: PropTypes.array,
+CourseListRow.propTypes = {
+  isHeader: PropTypes.bool,
+  textFirstCell: PropTypes.string,
+  textSecondCell: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
 };
 
-export default CourseList;
+export default CourseListRow;
