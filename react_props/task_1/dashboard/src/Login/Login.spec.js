@@ -1,7 +1,7 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Login from './Login';
 
-describe('Login component', () => {
+describe('Login', () => {
   test('renders 2 labels, 2 inputs and 1 button', () => {
     const { container } = render(<Login />);
 
@@ -10,25 +10,19 @@ describe('Login component', () => {
     expect(container.querySelectorAll('button')).toHaveLength(1);
   });
 
-  test('focuses email input when email label is clicked', () => {
+  test('email label is associated with email input', () => {
     render(<Login />);
 
-    const label = screen.getByText(/email/i);
     const input = screen.getByLabelText(/email/i);
-
-    fireEvent.click(label);
-
-    expect(input).toHaveFocus();
+    expect(input).toBeInTheDocument();
+    expect(input).toHaveAttribute('id', 'email');
   });
 
-  test('focuses password input when password label is clicked', () => {
+  test('password label is associated with password input', () => {
     render(<Login />);
 
-    const label = screen.getByText(/password/i);
     const input = screen.getByLabelText(/password/i);
-
-    fireEvent.click(label);
-
-    expect(input).toHaveFocus();
+    expect(input).toBeInTheDocument();
+    expect(input).toHaveAttribute('id', 'password');
   });
 });

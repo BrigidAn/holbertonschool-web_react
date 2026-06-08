@@ -7,11 +7,15 @@ const Login = () => {
       <p>Login to access the full dashboard</p>
 
       <form>
-        <label htmlFor="email">Email:</label>
-        <input id="email" type="email" />
+        <label>
+          Email:
+          <input id="email" name="email" type="email" />
+        </label>
 
-        <label htmlFor="password">Password:</label>
-        <input id="password" type="password" />
+        <label>
+          Password:
+          <input id="password" name="password" type="password" />
+        </label>
 
         <button type="submit">OK</button>
       </form>
