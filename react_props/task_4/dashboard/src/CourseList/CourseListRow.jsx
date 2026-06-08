@@ -1,7 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function CourseListRow({ isHeader = false, textFirstCell = "", textSecondCell = null }) {
+function CourseListRow({
+  isHeader = false,
+  textFirstCell = "",
+  textSecondCell = null,
+}) {
   if (isHeader) {
     return (
       <tr>
