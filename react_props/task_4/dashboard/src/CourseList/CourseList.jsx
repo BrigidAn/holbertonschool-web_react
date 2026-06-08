@@ -1,39 +1,36 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CourseListRow from "./CourseListRow";
-import "./CourseList.css";
 
 function CourseList({ courses = [] }) {
   return (
-    <div className="CourseList">
-      <table id="CourseList">
-        <thead>
-          <CourseListRow isHeader textFirstCell="Available courses" />
+    <table id="CourseList">
+      <thead>
+        <CourseListRow isHeader textFirstCell="Available courses" />
+        <CourseListRow
+          isHeader
+          textFirstCell="Course name"
+          textSecondCell="Credit"
+        />
+      </thead>
+
+      <tbody>
+        {courses.length === 0 ? (
           <CourseListRow
             isHeader
-            textFirstCell="Course name"
-            textSecondCell="Credit"
+            textFirstCell="No course available yet"
           />
-        </thead>
-
-        <tbody>
-          {courses.length === 0 ? (
+        ) : (
+          courses.map((course) => (
             <CourseListRow
-              isHeader
-              textFirstCell="No course available yet"
+              key={course.id}
+              textFirstCell={course.name}
+              textSecondCell={course.credit}
             />
-          ) : (
-            courses.map((course) => (
-              <CourseListRow
-                key={course.id}
-                textFirstCell={course.name}
-                textSecondCell={course.credit}
-              />
-            ))
-          )}
-        </tbody>
-      </table>
-    </div>
+          ))
+        )}
+      </tbody>
+    </table>
   );
 }
 
