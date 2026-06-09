@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <>
         <Notifications />
-
+<div className="min-h-screen flex flex-col">
         <Header />
 
         {isLoggedIn ? (
@@ -49,6 +49,7 @@ class App extends Component {
         </BodySection>
 
         <Footer />
+        </div>
       </>
     );
   }

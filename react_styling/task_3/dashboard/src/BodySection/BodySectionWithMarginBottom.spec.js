@@ -24,7 +24,7 @@ describe("BodySectionWithMarginBottom", () => {
     );
 
     const bodySection =
-      container.querySelector(".p-4");
+      container.querySelector(".bodySection");
 
     expect(bodySection).toBeInTheDocument();
   });

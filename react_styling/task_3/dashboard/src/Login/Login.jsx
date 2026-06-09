@@ -2,21 +2,43 @@ import React from "react";
 
 function Login() {
   return (
-    <div className="p-6 border-t-4" style={{ borderColor: "var(--main-color)" }}>
-      <p className="mb-4">Login to access the full dashboard</p>
+    <div
+      className="border-t-4 p-6"
+      style={{
+        borderColor: "var(--main-color)",
+      }}
+    >
+      <p className="mb-4">
+        Login to access the full dashboard
+      </p>
 
-      <form className="flex flex-col gap-4 w-64">
-        <label className="flex flex-col">
+      <form className="flex flex-wrap items-center gap-3">
+        <label htmlFor="email">
           Email:
-          <input className="border p-1" type="email" id="email" />
         </label>
 
-        <label className="flex flex-col">
+        <input
+          id="email"
+          name="email"
+          type="email"
+          className="border px-2 py-1"
+        />
+
+        <label htmlFor="password">
           Password:
-          <input className="border p-1" type="password" id="password" />
         </label>
 
-        <button className="bg-gray-200 p-2" type="submit">
+        <input
+          id="password"
+          name="password"
+          type="password"
+          className="border px-2 py-1"
+        />
+
+        <button
+          type="submit"
+          className="border px-3 py-1"
+        >
           OK
         </button>
       </form>

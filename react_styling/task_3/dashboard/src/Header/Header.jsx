@@ -3,12 +3,18 @@ import logo from "../assets/holberton-logo.jpg";
 
 function Header() {
   return (
-    <header className="flex items-center gap-4 border-b p-4">
-      <img src={logo} alt="holberton logo" className="h-12 w-auto" />
+    <header className="flex items-center gap-4 p-4 border-b">
+      <img
+        src={logo}
+        alt="holberton logo"
+        className="h-16"
+      />
 
       <h1
-        className="text-2xl font-bold"
-        style={{ color: "var(--main-color)" }}
+        className="text-3xl font-bold"
+        style={{
+          color: "var(--main-color)",
+        }}
       >
         School dashboard
       </h1>

@@ -1,14 +1,16 @@
 import React from "react";
-import "./Footer.css";
-import { getFooterCopy } from '../utils/utils';
 
-const Footer = () => (
-  <footer className="border-t-4 text-center p-4 mt-auto"
-  style={{ borderColor: "var(--main-color)" }}>
-    <p>
-      Copyright {new Date().getFullYear()} - {getFooterCopy(true)}
-    </p>
-  </footer>
-);
+function Footer() {
+  return (
+    <footer
+      className="mt-auto border-t-4 text-center italic p-4"
+      style={{
+        borderColor: "var(--main-color)",
+      }}
+    >
+      Copyright 2026 - Holberton School
+    </footer>
+  );
+}
 
 export default Footer;

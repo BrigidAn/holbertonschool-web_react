@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function BodySection({ title, children }) {
+function BodySection({ title = "", children }) {
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-semibold mb-2">{title}</h2>
+    <div className="bodySection p-4">
+      <h2 className="text-xl font-semibold mb-2">
+        {title}
+      </h2>
       {children}
     </div>
   );
@@ -13,11 +15,6 @@ function BodySection({ title, children }) {
 BodySection.propTypes = {
   title: PropTypes.string,
   children: PropTypes.node,
-};
-
-BodySection.defaultProps = {
-  title: "",
-  children: null,
 };
 
 export default BodySection;
