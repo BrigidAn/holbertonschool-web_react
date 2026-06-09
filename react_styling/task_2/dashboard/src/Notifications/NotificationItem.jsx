@@ -9,14 +9,20 @@ class NotificationItem extends PureComponent {
       color: type === "urgent" ? "red" : "blue",
     };
 
-    return (
+    return html ? (
       <li
         data-notification-type={type}
         style={style}
         onClick={() => markAsRead(id)}
-        {...(html ? { dangerouslySetInnerHTML: { __html: html } } : {})}
+        dangerouslySetInnerHTML={html}
+      />
+    ) : (
+      <li
+        data-notification-type={type}
+        style={style}
+        onClick={() => markAsRead(id)}
       >
-        {!html ? value : null}
+        {value}
       </li>
     );
   }
