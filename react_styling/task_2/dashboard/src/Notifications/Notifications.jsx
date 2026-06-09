@@ -1,46 +1,62 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import NotificationItem from "./NotificationItem";
+import closeIcon from "../assets/close-button.png";
 
-function Notifications({
-  displayDrawer = false,
-  notifications = [],
-}) {
-  return (
-    <div
-      className="w-1/4 ml-auto border border-dashed p-[6px]"
-      style={{
-        borderColor: "var(--main-color)",
-      }}
-    >
-      <div className="flex justify-end font-bold">
-        Your Notifications
+class Notifications extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    return nextProps.notifications.length !== this.props.notifications.length;
+  }
+  markAsRead = (id) => {
+    console.log(`Notification ${id} has been marked as read`);
+  };
+
+  render() {
+    const { displayDrawer, notifications } = this.props;
+
+    return (
+      <div className="w-1/4 ml-auto border border-dashed p-[6px] border-[var(--main-color)]">
+        <div className="notification-title">Your notifications</div>
+
+        {displayDrawer && (
+          <div className="notification-items">
+            <p>Here is the list of notifications</p>
+
+            <button
+              aria-label="Close"
+              className="close-btn"
+              onClick={() => console.log("Close button has been clicked")}
+            >
+              <img src={closeIcon} alt="close icon" />
+            </button>
+
+            {notifications.length === 0 ? (
+              <p>No new notification for now</p>
+            ) : (
+              <ul>
+                {notifications.map((item) => (
+                  <NotificationItem
+                    key={item.id}
+                    id={item.id}
+                    type={item.type}
+                    value={item.value}
+                    html={item.html}
+                    markAsRead={this.markAsRead}
+                  />
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
       </div>
-
-      {displayDrawer && (
-        <div className="mt-2">
-          <p>Here is the list of notifications</p>
-
-          {notifications.length === 0 ? (
-            <p>No new notification for now</p>
-          ) : (
-            <ul className="space-y-1">
-              {notifications.map((item) => (
-                <NotificationItem
-                  key={item.id}
-                  id={item.id}
-                  type={item.type}
-                  value={item.value}
-                  html={item.html}
-                />
-              ))}
-            </ul>
-          )}
-        </div>
-      )}
-    </div>
-  );
+    );
+  }
 }
+
+Notifications.defaultProps = {
+  displayDrawer: false,
+  notifications: [],
+};
 
 Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
