@@ -8,13 +8,28 @@ function CourseListRow({
 }) {
   if (isHeader) {
     return (
-      <tr>
+      <tr
+        className="border border-gray-400"
+        style={{
+          backgroundColor: "var(--color-table-header)",
+          opacity: 0.66,
+        }}
+      >
         {textSecondCell === null ? (
-          <th colSpan="2">{textFirstCell}</th>
+          <th
+            colSpan="2"
+            className="border border-gray-400"
+          >
+            {textFirstCell}
+          </th>
         ) : (
           <>
-            <th>{textFirstCell}</th>
-            <th>{textSecondCell}</th>
+            <th className="border border-gray-400">
+              {textFirstCell}
+            </th>
+            <th className="border border-gray-400">
+              {textSecondCell}
+            </th>
           </>
         )}
       </tr>
@@ -22,9 +37,20 @@ function CourseListRow({
   }
 
   return (
-    <tr>
-      <td>{textFirstCell}</td>
-      <td>{textSecondCell}</td>
+    <tr
+      className="border border-gray-400"
+      style={{
+        backgroundColor: "var(--color-table-rows)",
+        opacity: 0.45,
+      }}
+    >
+      <td className="border border-gray-400 pl-2">
+        {textFirstCell}
+      </td>
+
+      <td className="border border-gray-400 pl-2">
+        {textSecondCell}
+      </td>
     </tr>
   );
 }

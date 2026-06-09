@@ -1,5 +1,6 @@
 .CourseList {
   width: 100%;
+  border-collapse: collapse;
 }
 
 table {
