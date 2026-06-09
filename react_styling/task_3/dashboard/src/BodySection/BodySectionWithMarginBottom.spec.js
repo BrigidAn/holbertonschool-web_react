@@ -10,7 +10,7 @@ describe("BodySectionWithMarginBottom", () => {
     );
 
     const div = container.querySelector(
-      ".mb-10"
+      ".bodySectionWithMargin"
     );
 
     expect(div).toBeInTheDocument();

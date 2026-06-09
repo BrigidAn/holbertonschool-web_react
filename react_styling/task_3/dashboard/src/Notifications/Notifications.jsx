@@ -5,8 +5,8 @@ import closeIcon from "../assets/close-button.png";
 
 class Notifications extends React.Component {
   shouldComponentUpdate(nextProps) {
-  return nextProps.notifications.length !== this.props.notifications.length;
-}
+    return nextProps.notifications.length !== this.props.notifications.length;
+  }
   markAsRead = (id) => {
     console.log(`Notification ${id} has been marked as read`);
   };
@@ -15,7 +15,10 @@ class Notifications extends React.Component {
     const { displayDrawer, notifications } = this.props;
 
     return (
-      <div className="w-1/4 ml-auto border border-dashed p-[6px] border-[var(--main-color)]">
+      <div
+        className="w-1/4 ml-auto border border-dashed p-[6px] border-[var(--main-color)]"
+        style={{ borderColor: "var(--main-color)" }}
+      >
         <div className="notification-title">Your notifications</div>
 
         {displayDrawer && (
