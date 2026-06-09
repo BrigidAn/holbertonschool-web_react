@@ -2,8 +2,9 @@
 
 @theme {
   --font-roboto: "Roboto", sans-serif;
-  --color-table-header: #ded5b5;
-  --color-table-rows: #CDCDCD;
+
+  --color-table-header: #deb5b5;
+  --color-table-rows: #cdcdcd;
 }
 
 @layer base {
