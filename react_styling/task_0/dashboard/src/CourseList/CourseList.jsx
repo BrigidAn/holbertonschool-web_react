@@ -1,38 +1,45 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CourseListRow from "./CourseListRow";
-import WithLogging from "../HOC/WithLogging";
 
 function CourseList({ courses = [] }) {
   return (
-    <table id="CourseList">
-      <thead>
-        <CourseListRow isHeader textFirstCell="Available courses" />
-        <CourseListRow
-          isHeader
-          textFirstCell="Course name"
-          textSecondCell="Credit"
-        />
-      </thead>
-
-      <tbody>
-        {courses.length === 0 ? (
+    <div className="w-4/5 mx-auto my-8">
+      <table
+        id="CourseList"
+        className="w-full border-collapse"
+      >
+        <thead>
           <CourseListRow
             isHeader={true}
-            textFirstCell="No course available yet"
-            textSecondCell={null}
+            textFirstCell="Available courses"
           />
-        ) : (
-          courses.map((course) => (
+
+          <CourseListRow
+            isHeader={true}
+            textFirstCell="Course name"
+            textSecondCell="Credit"
+          />
+        </thead>
+
+        <tbody>
+          {courses.length === 0 ? (
             <CourseListRow
-              key={course.id}
-              textFirstCell={course.name}
-              textSecondCell={course.credit}
+              textFirstCell="No course available yet"
+              textSecondCell={null}
             />
-          ))
-        )}
-      </tbody>
-    </table>
+          ) : (
+            courses.map((course) => (
+              <CourseListRow
+                key={course.id}
+                textFirstCell={course.name}
+                textSecondCell={course.credit}
+              />
+            ))
+          )}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
@@ -40,4 +47,4 @@ CourseList.propTypes = {
   courses: PropTypes.array,
 };
 
-export default WithLogging(CourseList);
+export default CourseList;
