@@ -4,24 +4,20 @@ import NotificationItem from "./NotificationItem";
 import closeIcon from "../assets/close-button.png";
 import "./Notifications.css";
 
-class Notifications extends Component {
+class Notifications extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    return nextProps.notifications.length > this.props.notifications.length;
+  }
   markAsRead = (id) => {
-    console.log(
-      `Notification ${id} has been marked as read`
-    );
+    console.log(`Notification ${id} has been marked as read`);
   };
 
   render() {
-    const {
-      displayDrawer,
-      notifications,
-    } = this.props;
+    const { displayDrawer, notifications } = this.props;
 
     return (
       <div className="Notifications">
-        <div className="notification-title">
-          Your notifications
-        </div>
+        <div className="notification-title">Your notifications</div>
 
         {displayDrawer && (
           <div className="notification-items">
@@ -30,16 +26,9 @@ class Notifications extends Component {
             <button
               aria-label="Close"
               className="close-btn"
-              onClick={() =>
-                console.log(
-                  "Close button has been clicked"
-                )
-              }
+              onClick={() => console.log("Close button has been clicked")}
             >
-              <img
-                src={closeIcon}
-                alt="close icon"
-              />
+              <img src={closeIcon} alt="close icon" />
             </button>
 
             {notifications.length === 0 ? (
