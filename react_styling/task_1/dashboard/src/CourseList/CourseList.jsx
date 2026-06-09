@@ -4,19 +4,15 @@ import CourseListRow from "./CourseListRow";
 
 function CourseList({ courses = [] }) {
   return (
-    <div className="w-4/5 mx-auto my-8">
-      <table
-        id="CourseList"
-        className="w-full border-collapse"
-      >
+    <div className="w-4/5 mx-auto my-10">
+      <table id="CourseList" className="w-full border-collapse">
         <thead>
           <CourseListRow
-            isHeader={true}
+            isHeader
             textFirstCell="Available courses"
           />
-
           <CourseListRow
-            isHeader={true}
+            isHeader
             textFirstCell="Course name"
             textSecondCell="Credit"
           />

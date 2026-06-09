@@ -9,17 +9,14 @@ function CourseListRow({
   if (isHeader) {
     return (
       <tr
-        className="border border-gray-400"
         style={{
           backgroundColor: "var(--color-table-header)",
           opacity: 0.66,
         }}
+        className="border border-gray-400"
       >
         {textSecondCell === null ? (
-          <th
-            colSpan="2"
-            className="border border-gray-400"
-          >
+          <th colSpan="2" className="border border-gray-400">
             {textFirstCell}
           </th>
         ) : (
@@ -38,16 +35,15 @@ function CourseListRow({
 
   return (
     <tr
-      className="border border-gray-400"
       style={{
         backgroundColor: "var(--color-table-rows)",
         opacity: 0.45,
       }}
+      className="border border-gray-400"
     >
       <td className="border border-gray-400 pl-2">
         {textFirstCell}
       </td>
-
       <td className="border border-gray-400 pl-2">
         {textSecondCell}
       </td>
