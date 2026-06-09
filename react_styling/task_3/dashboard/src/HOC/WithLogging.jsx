@@ -7,16 +7,15 @@ function WithLogging(WrappedComponent) {
     "Component";
 
   class WithLoggingComponent extends React.Component {
-      componentDidMount() {
-      const name = WrappedComponent.displayName || WrappedComponent.name || "Component";
-      console.log(`Component ${name} is mounted`);
+    componentDidMount() {
+      console.log(`Component ${wrappedName} is mounted`);
     }
 
-     componentWillUnmount() {
-      const name = WrappedComponent.displayName || WrappedComponent.name || "Component";
-      console.log(`Component ${name} is going to unmount`);
+    componentWillUnmount() {
+      console.log(
+        `Component ${wrappedName} is going to unmount`
+      );
     }
-
 
     render() {
       return <WrappedComponent {...this.props} />;
