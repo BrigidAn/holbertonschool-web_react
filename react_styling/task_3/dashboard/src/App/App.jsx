@@ -50,10 +50,8 @@ class App extends Component {
 
     return (
       <div className="min-h-screen flex flex-col">
-        <Header />
-
         <Notifications displayDrawer={true} notifications={notifications} />
-
+        <Header />
         {isLoggedIn ? (
           <BodySectionWithMarginBottom title="Course list">
             <CourseList courses={this.coursesList} />
@@ -80,7 +78,7 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  isLoggedIn: true,
+  isLoggedIn: false,
   logOut: () => {},
 };
 
