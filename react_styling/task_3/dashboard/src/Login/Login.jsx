@@ -19,8 +19,6 @@ function Login() {
 
         <input
           id="email"
-          name="email"
-          type="text"
           className="border px-2 py-1"
         />
 
@@ -30,8 +28,6 @@ function Login() {
 
         <input
           id="password"
-          name="password"
-          type="password"
           className="border px-2 py-1"
         />
 
