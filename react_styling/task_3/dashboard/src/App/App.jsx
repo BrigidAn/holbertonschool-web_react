@@ -9,6 +9,8 @@ import CourseList from "../CourseList/CourseList";
 import BodySection from "../BodySection/BodySection";
 import BodySectionWithMarginBottom from "../BodySection/BodySectionWithMarginBottom";
 
+import BodySectionWithMarginBottom from "../BodySection/BodySectionWithMarginBottom";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -33,33 +35,26 @@ class App extends Component {
     document.addEventListener("keydown", this.handleKeyDown);
   }
 
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleKeyDown);
-  }
-
-  handleKeyDown = (event) => {
-    if (event.ctrlKey && event.key === "h") {
-      alert("Logging you out");
-      this.props.logOut();
-    }
-  };
-
   render() {
     const { isLoggedIn, notifications } = this.state;
 
     return (
       <div className="min-h-screen flex flex-col">
-        <Notifications displayDrawer={true} notifications={notifications} />
 
         <Header />
 
-        {isLoggedIn ? (
-          <BodySectionWithMarginBottom title="Course list">
-            <CourseList courses={this.coursesList} />
-          </BodySectionWithMarginBottom>
-        ) : (
+        <Notifications
+          displayDrawer={true}
+          notifications={notifications}
+        />
+
+        {!isLoggedIn ? (
           <BodySectionWithMarginBottom title="Log in to continue">
             <Login />
+          </BodySectionWithMarginBottom>
+        ) : (
+          <BodySectionWithMarginBottom title="Course list">
+            <CourseList courses={this.coursesList} />
           </BodySectionWithMarginBottom>
         )}
 
