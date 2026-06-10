@@ -15,7 +15,7 @@ class Notifications extends React.Component {
     const { displayDrawer, notifications } = this.props;
 
     return (
-      <div className=" Notifications ml-auto w-fit">
+      <div className=" Notifications flex flex-col items-end">
         <div className="notification-title text-right mb-2">
           Your notifications
         </div>

@@ -3,7 +3,7 @@ import React from "react";
 function Login() {
   return (
     <div
-      className="border-t-4 p-6"
+      className="Login border-t-4 p-6"
       style={{
         borderColor: "var(--main-color)",
       }}
