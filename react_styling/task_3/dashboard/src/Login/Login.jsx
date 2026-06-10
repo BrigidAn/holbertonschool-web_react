@@ -20,7 +20,7 @@ function Login() {
         <input
           id="email"
           name="email"
-          type="email"
+          type="text"
           className="border px-2 py-1"
         />
 

@@ -7,7 +7,7 @@ function CourseList({ courses = [] }) {
     <div className="w-4/5 mx-auto my-10">
       <table id="CourseList" className="w-full border-collapse">
         <thead>
-          <CourseListRow
+          <CourseListRow 
             isHeader
             textFirstCell="Available courses"
           />

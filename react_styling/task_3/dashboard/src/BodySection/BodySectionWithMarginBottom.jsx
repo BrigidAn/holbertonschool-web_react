@@ -7,7 +7,7 @@ function BodySectionWithMarginBottom({
   children,
 }) {
   return (
-    <div className="bodySectionWithMargin text-black">
+    <div className="bodySectionWithMargin mb-10">
       <BodySection title={title} >
         {children}
       </BodySection>

@@ -10,8 +10,7 @@ function CourseListRow({
     return (
       <tr
         style={{
-          backgroundColor: "var(--color-table-header)",
-          opacity: 0.66,
+         backgroundColor: "rgba(222, 181, 181, 0.66)",
         }}
         className="border border-gray-400"
       >
@@ -21,12 +20,8 @@ function CourseListRow({
           </th>
         ) : (
           <>
-            <th className="border border-gray-400">
-              {textFirstCell}
-            </th>
-            <th className="border border-gray-400">
-              {textSecondCell}
-            </th>
+            <th className="border border-gray-400 ">{textFirstCell}</th>
+            <th className="border border-gray-400">{textSecondCell}</th>
           </>
         )}
       </tr>
@@ -35,18 +30,13 @@ function CourseListRow({
 
   return (
     <tr
+      className="border border-gray-400 text-black"
       style={{
-        backgroundColor: "var(--color-table-rows)",
-        opacity: 0.45,
+        backgroundColor: "rgba(205,205,205,0.45)",
       }}
-      className="border border-gray-400"
     >
-      <td className="border border-gray-400 pl-2">
-        {textFirstCell}
-      </td>
-      <td className="border border-gray-400 pl-2">
-        {textSecondCell}
-      </td>
+      <td className="border border-gray-400 pl-2 ">{textFirstCell}</td>
+      <td className="border border-gray-400 pl-2 ">{textSecondCell}</td>
     </tr>
   );
 }
@@ -54,10 +44,7 @@ function CourseListRow({
 CourseListRow.propTypes = {
   isHeader: PropTypes.bool,
   textFirstCell: PropTypes.string,
-  textSecondCell: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  textSecondCell: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default CourseListRow;

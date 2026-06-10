@@ -10,6 +10,6 @@ import App from "./App/App.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App isLoggedIn={true}/>
+    <App isLoggedIn={true} />
   </React.StrictMode>
 );

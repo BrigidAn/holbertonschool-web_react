@@ -15,22 +15,31 @@ class Notifications extends React.Component {
     const { displayDrawer, notifications } = this.props;
 
     return (
-      <div
-        className="w-1/4 ml-auto border border-dashed p-[6px] border-[var(--main-color)]"
-        style={{ borderColor: "var(--main-color)" }}
-      >
-        <div className="notification-title">Your notifications</div>
+      <div className="ml-auto w-fit">
+        <div className="notification-title text-right mb-2">
+          Your notifications
+        </div>
 
         {displayDrawer && (
-          <div className="notification-items">
+          <div
+            className="notification-items
+                   relative
+                   w-80
+                   border-2
+                   border-dashed
+                   p-[6px]"
+            style={{
+              borderColor: "var(--main-color)",
+            }}
+          >
             <p>Here is the list of notifications</p>
 
             <button
               aria-label="Close"
-              className="close-btn"
+              className="absolute top-2 right-2"
               onClick={() => console.log("Close button has been clicked")}
             >
-              <img src={closeIcon} alt="close icon" />
+              <img src={closeIcon} alt="close icon" className="w-3 h-3" />
             </button>
 
             {notifications.length === 0 ? (

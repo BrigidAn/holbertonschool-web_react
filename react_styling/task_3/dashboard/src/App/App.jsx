@@ -45,25 +45,22 @@ class App extends Component {
   };
 
   render() {
-    const { isLoggedIn, notifications } = this.state;
+    const { isLoggedIn } = this.props;
+    const { notifications } = this.state;
 
     return (
       <div className="min-h-screen flex flex-col">
-
         <Header />
 
-        <Notifications
-          displayDrawer={true}
-          notifications={notifications}
-        />
+        <Notifications displayDrawer={true} notifications={notifications} />
 
-        {!isLoggedIn ? (
+        {isLoggedIn ? (
           <BodySectionWithMarginBottom title="Course list">
-            <Login />
+            <CourseList courses={this.coursesList} />
           </BodySectionWithMarginBottom>
         ) : (
           <BodySectionWithMarginBottom title="Log in to continue">
-            <CourseList courses={this.coursesList} />
+            <Login />
           </BodySectionWithMarginBottom>
         )}
 
@@ -83,7 +80,7 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  isLoggedIn: false,
+  isLoggedIn: true,
   logOut: () => {},
 };
 
