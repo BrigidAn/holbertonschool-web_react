@@ -12,9 +12,7 @@ function WithLogging(WrappedComponent) {
     }
 
     componentWillUnmount() {
-      console.log(
-        `Component ${wrappedName} is going to unmount`
-      );
+      console.log(`Component ${wrappedName} is going to unmount`);
     }
 
     render() {

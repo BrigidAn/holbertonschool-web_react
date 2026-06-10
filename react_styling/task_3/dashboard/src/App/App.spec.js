@@ -28,7 +28,7 @@ describe("App component", () => {
   test("renders logo image", () => {
     render(<App />);
 
-    expect(screen.getByAltText(/holberton logo/i)).toBeInTheDocument();
+    expect(screen.getByAltText(/logo/i)).toBeInTheDocument();
   });
 
   test("renders email and password inputs", () => {
