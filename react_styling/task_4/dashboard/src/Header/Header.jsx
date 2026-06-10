@@ -3,7 +3,7 @@ import logo from "../assets/holberton-logo.jpg";
 
 function Header() {
   return (
-    <header className="App-header flex flex-col sm:flex-row items-center justify-between p-2 sm:p-4">
+    <header className="App-header flex flex-col sm:flex-row items-center justify-between p-2 sm:p-4            ">
       <img
         src={logo}
         alt="logo"

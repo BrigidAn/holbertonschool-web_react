@@ -5,14 +5,14 @@ import CourseListRow from "./CourseListRow";
 function CourseList({ courses = [] }) {
   return (
     <div className="w-full overflow-x-auto my-10">
-      <table id="CourseList" className="min-w-full border">
+      <table id="CourseList" className="min-w-full border border-gray-400">
         <thead>
           <CourseListRow 
-            isHeader
+            isHeader={true}
             textFirstCell="Available courses"
           />
           <CourseListRow
-            isHeader
+            isHeader={true}
             textFirstCell="Course name"
             textSecondCell="Credit"
           />

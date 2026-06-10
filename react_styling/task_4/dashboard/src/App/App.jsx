@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import Notifications from "../Notifications/Notifications";
@@ -14,7 +14,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      isLoggedIn: false,
+      isLoggedIn: true,
       notifications: [
         { id: 1, type: "default", value: "New course available" },
         { id: 2, type: "urgent", value: "New resume available" },
@@ -29,8 +29,22 @@ class App extends Component {
     { id: 3, name: "React", credit: 40 },
   ];
 
+  handleKeyDown = (event) => {
+    if (event.ctrlKey && event.key === "h") {
+      alert("Logging you out");
+
+      if (this.props.logOut) {
+        this.props.logOut();
+      }
+    }
+  };
+
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDown);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyDown);
   }
 
   render() {
@@ -38,13 +52,9 @@ class App extends Component {
 
     return (
       <div className="min-h-screen flex flex-col px-2 sm:px-4 md:px-6">
-
         <Header />
 
-        <Notifications
-          displayDrawer={true}
-          notifications={notifications}
-        />
+        <Notifications displayDrawer={true} notifications={notifications} />
 
         {!isLoggedIn ? (
           <BodySectionWithMarginBottom title="Log in to continue">
@@ -67,12 +77,11 @@ class App extends Component {
 }
 
 App.propTypes = {
-  isLoggedIn: PropTypes.bool,
   logOut: PropTypes.func,
 };
 
 App.defaultProps = {
-  isLoggedIn: false,
+  logOut: () => {},
 };
 
 export default App;
